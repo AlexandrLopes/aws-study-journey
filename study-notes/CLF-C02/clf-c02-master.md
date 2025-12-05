@@ -164,5 +164,11 @@ Controle de quem pode fazer o que. **Serviço Global.**
 Os dispositivos da Família AWS Snow permitem a captura e o transporte de dados o
 offline para a AWS a partir de ambientes desconectados ou robustos
 
+**FamilIa AWS Outpost**
+
+É aquele servidor tradicional que ficará dentro da empresa.
+
+AWS Outpost traz serviços, infraestrutura e modelos operacionais nativos da AWS para o local  para uma experiência h[híbrida consistente.
+
 
 
