@@ -158,3 +158,11 @@ Controle de quem pode fazer o que. **Serviço Global.**
 * **Serviço para monitorar métricas (CPU/Memória)?** CloudWatch.
 * **Consultor de boas práticas?** Trusted Advisor.
 * **Chaves de acesso programático?** Access Key ID & Secret Access Key (Nunca compartilhe!).
+
+**Família AWS SNOW**
+
+Os dispositivos da Família AWS Snow permitem a captura e o transporte de dados o
+offline para a AWS a partir de ambientes desconectados ou robustos
+
+
+
