@@ -170,5 +170,7 @@ offline para a AWS a partir de ambientes desconectados ou robustos
 
 AWS Outpost traz serviços, infraestrutura e modelos operacionais nativos da AWS para o local  para uma experiência h[híbrida consistente.
 
+**Relatório de Custos e Uso da AWS (CUR)** 
+
 
 
