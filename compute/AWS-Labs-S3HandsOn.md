@@ -6,21 +6,22 @@ use case of securely accessing objects within a private S3 bucket through an EC2
 
 This repository demonstrate the conclusion of the following steps:
 
-• Creating a bucket in S3
-• Adding objects to your S3 bucket
-• Working with objects in the S3 Console
-• Accessing objects stored in S3
-• Enabling bucket versioning
-• Setting up a Lifecycle Policy
-• Cleanup: Deleting the objects and the S3 bucket
+• Creating a bucket in S3\
+• Adding objects to your S3 bucket\
+• Working with objects in the S3 Console\
+• Accessing objects stored in S3\
+• Enabling bucket versioning\
+• Setting up a Lifecycle Policy\
+• Cleanup: Deleting the objects and the S3 bucket\
 
 
-Aqui está a primeira foto mostrando a configuração do S3:
-![Screenshot do S3 - Passo 1](images/Imagem 11-12-2025 às 15.36 .jpeg)
+AWS Console:
 
-... (Mais texto ou explicação) ...
+![AWS Console](images/S3-Working.jpg)
 
-## Resultado Final
 
-Abaixo, a segunda foto para validar o resultado:
-![Screenshot do S3 - Resultado](images/Imagem 11-12-2025 às 15.36 (1).jpeg)
+
+## Final Result
+
+
+![AWS Confirmation C2 Conect to S3](images/S3-Final.jpg)
