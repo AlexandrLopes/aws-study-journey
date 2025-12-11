@@ -15,7 +15,7 @@ Connect to your linux instance
 
 AWS Console:
 
-![AWS Console](images/EC2-Working.jpg)
+![AWS Console](images/EC2-working.Jpg)
 
 
 
