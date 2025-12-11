@@ -12,7 +12,7 @@ This repository demonstrate the conclusion of the following steps:
 • Accessing objects stored in S3\
 • Enabling bucket versioning\
 • Setting up a Lifecycle Policy\
-• Cleanup: Deleting the objects and the S3 bucket\
+• Cleanup: Deleting the objects and the S3 bucket
 
 
 AWS Console:
