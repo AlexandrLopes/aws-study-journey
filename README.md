@@ -1,11 +1,11 @@
-# ☁️ AWS Cloud Labs
+#  AWS Cloud Labs
 
 Welcome to my cloud engineering playground! This repository documents my practical journey through Amazon Web Services (AWS). Here, I store configurations, diagrams, and notes from my daily labs.
 
-## 🎯 Objective
+##  Objective
 To translate theoretical knowledge into practical skills by building secure, scalable, and cost-effective cloud solutions.
 
-## 📂 Repository Structure
+##  Repository Structure
 
 | Service | Focus Area |
 | :--- | :--- |
@@ -16,7 +16,7 @@ To translate theoretical knowledge into practical skills by building secure, sca
 | **serverless/** | Lambda functions, API Gateway |
 | **monitoring/** | CloudWatch Alarms, SNS notifications |
 
-## 🛠️ Tools & Technologies
+##  Tools & Technologies
 * **AWS Console** (Manual Configurations)
 * **AWS CLI** (Command Line Interface)
 * **Bash Scripting** (User Data & Automation)
