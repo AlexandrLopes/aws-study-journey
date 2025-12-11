@@ -15,7 +15,7 @@ This repository demonstrate the conclusion of the following steps:
 • Cleanup: Deleting the objects and the S3 bucket
 
 
-AWS Console:
+## AWS Console:
 
 ![AWS Console](images/S3-Working.jpg)
 
