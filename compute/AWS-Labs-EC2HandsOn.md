@@ -1,4 +1,4 @@
-Amazon EC2 Hands-On Lab
+## Amazon EC2 Hands-On Lab
 
 This lab was designed to give some experiences with console. 
 In this especific one, interacting with the EC2 service through the AWS Console and demonstrate 
