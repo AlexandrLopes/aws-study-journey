@@ -8,9 +8,9 @@ This repository demonstrate the conclusion of the following steps:
 
 Create your own web server by going through the labs in the order below:
 
-Create a new key pair
-Launch a Web Server Instance
-Connect to your linux instance
+• Create a new key pair\
+• Launch a Web Server Instance\
+• Connect to your linux instance
 
 
 ## AWS Console:
