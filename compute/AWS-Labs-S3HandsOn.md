@@ -15,3 +15,12 @@ This repository demonstrate the conclusion of the following steps:
 • Cleanup: Deleting the objects and the S3 bucket
 
 
+Aqui está a primeira foto mostrando a configuração do S3:
+![Screenshot do S3 - Passo 1](images/Imagem 11-12-2025 às 15.36 .jpeg)
+
+... (Mais texto ou explicação) ...
+
+## Resultado Final
+
+Abaixo, a segunda foto para validar o resultado:
+![Screenshot do S3 - Resultado](images/Imagem 11-12-2025 às 15.36 (1).jpeg)
