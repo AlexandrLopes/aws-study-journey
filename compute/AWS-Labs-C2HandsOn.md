@@ -13,9 +13,9 @@ Launch a Web Server Instance
 Connect to your linux instance
 
 
-AWS Console:
+## AWS Console:
 
-![AWS Console](images/EC2-working.Jpg)
+![AWS Console](images/EC2-working.jpg)
 
 
 
