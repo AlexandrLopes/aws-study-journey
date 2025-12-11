@@ -1,7 +1,7 @@
-Amazon C2 Hands-On Lab
+Amazon EC2 Hands-On Lab
 
 This lab was designed to give some experiences with console. 
-In this especific one, interacting with the C2 service through the AWS Console and demonstrate 
+In this especific one, interacting with the EC2 service through the AWS Console and demonstrate 
 the use case of securely accessing objects within a private S3 bucket through an EC2 web host.
 
 This repository demonstrate the conclusion of the following steps:
