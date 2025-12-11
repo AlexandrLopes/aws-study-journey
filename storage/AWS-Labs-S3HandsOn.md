@@ -1,4 +1,4 @@
-**Amazon S3 Hands-On Lab**
+## Amazon S3 Hands-On Lab
 
 This lab was designed to give some experiences with console.
 In this especific one, interacting with the S3 service through the AWS Console and demonstrate the 
