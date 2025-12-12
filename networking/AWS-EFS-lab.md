@@ -15,3 +15,30 @@ This repository demonstrate the conclusion of the following steps:
 • Create a file on EFS drive\
 • Demonstrate the EFS mount from the second instance\
 • Clean up
+
+
+## Creating the EFS:
+
+![AWS Console](images/EFS-new.jpg)
+
+
+
+## EFS-1 and EF-2 running already with the Security Groups parameters 
+
+
+![AWS Confirmation C2 Conect to S3](images/EFS-EC2.jpeg)
+
+## EFS-1 running connected
+
+
+![AWS Confirmation C2 Conect to S3](images/EFS-connect1.jpg)
+
+## EFS-2 running connected
+
+
+![AWS Confirmation C2 Conect to S3](images/EFS-connect2.jpg)
+
+##  Create a file on EFS drive
+
+
+![AWS Confirmation C2 Conect to S3](images/EFS-created-file.jpg)
