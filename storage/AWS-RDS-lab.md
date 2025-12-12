@@ -3,11 +3,12 @@
 • Create VPC Security Group\
 • Launch an RDS Instance\
 • Save RDS Credentials\
-• Access RDS from EC2\
-• Create an RDS Snapshot (Optional)\
-• Modify RDS Instance Size (Optional)\
 • Clean Up Resources
 
 
 ## Create VPC Security Group
-
+![AWS Console](images/RDS-Group.jpg)
+## Launch an RDS Instance
+![AWS Console](images/RDS-Create.jpg)
+## Save RDS Credentials into Secrets Manager
+![AWS Console](images/RDS-Secret.jpg)
