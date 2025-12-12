@@ -16,29 +16,35 @@ This repository demonstrate the conclusion of the following steps:
 • Demonstrate the EFS mount from the second instance\
 • Clean up
 
+## VPC and Public Subnets created:
+![AWS Console](images/VPC.jpg)
+![AWS Console](images/Subnet.jpg)
 
 ## Creating the EFS:
 
-![AWS Console](images/EFS-new.jpg)
+![AWS Console](images/EF2-new.jpg)
 
 
 
 ## EFS-1 and EF-2 running already with the Security Groups parameters 
 
 
-![AWS Confirmation C2 Conect to S3](images/EFS-EC2.jpeg)
+![AWS Confirmation C2 Conect to S3](images/EFS-EC2.jpg)
 
 ## EFS-1 running connected
 
 
-![AWS Confirmation C2 Conect to S3](images/EFS-connect1.jpg)
+![AWS Confirmation C2 Conect to S3](images/EFS-connect1.jpeg)
 
 ## EFS-2 running connected
 
 
-![AWS Confirmation C2 Conect to S3](images/EFS-connect2.jpg)
+![AWS Confirmation C2 Conect to S3](images/EF2-connect2.jpg)
 
 ##  Create a file on EFS drive
 
 
 ![AWS Confirmation C2 Conect to S3](images/EFS-created-file.jpg)
+
+
+to end the task, was ask to shut down the services we used today by deleting all. 
