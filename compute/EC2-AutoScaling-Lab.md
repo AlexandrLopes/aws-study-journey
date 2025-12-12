@@ -10,8 +10,8 @@ Create your own Web Server by going through the labs in the order below:
 
 • Launch the Instance\
 • Auto Scaling\
-• Launch Templates\ 
-• Creation and configuration of Security Groups\
+• Launch Templates
+• Creation and Configuration of Security Groups\
 • AMIs\
 • Application Load Balancers
 
