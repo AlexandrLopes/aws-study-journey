@@ -8,8 +8,12 @@ This repository demonstrate the conclusion of the following steps:
 
 Create your own Web Server by going through the labs in the order below:
 
-**Primary:** Auto Scaling, Launch Templates, Creation and configuration of Security Groups
-**Secondary:** AMIs, Application Load Balancers
+• Launch the Instance\
+• Auto Scaling\
+• Launch Templates\ 
+• Creation and configuration of Security Groups\
+• AMIs\
+• Application Load Balancers
 
 
 
