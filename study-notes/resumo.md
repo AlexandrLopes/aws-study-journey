@@ -424,6 +424,7 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 *   Portal de **conformidade** e **documentação**.
 *   Acesso a relatórios de conformidade da AWS (SOC, PCI, ISO).
+*   É o portal de autoatendimento (gratuito) onde você baixa relatórios de conformidade e gerencia acordos legais com a AWS.
 
 ### AWS Shield
 
