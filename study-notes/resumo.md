@@ -60,12 +60,12 @@ Adiciona ou remove automaticamente (por i.a) Instâncias do EC2 de acordo com as
 
 ### Elastic Load Balancing
 
-É um serviço (que direciona) do AWS.
+É um serviço do AWS.
 
-*   Distribui o tráfego automaticamente entre vários recursos.
+*   Distribui/Direciona o tráfego automaticamente entre vários recursos.
 *   Fornece um único ponto de contato para seu grupo do Auto Scaling.
 *   Passa a ser o ponto de contato, as solicitações chegam nele, e ele que distribui o tráfego para os Servidores.
-*   Pode distribuir o Tráfego para Servidores em Zonas diferentes.
+*   Pode distribuir o Tráfego para Servidores em ZA's diferentes.
 *   Faz **Health Check** - olha para a saúde das instâncias, e caso uma falhe, ele corta a comunicação.
 *   Só é direcionado para Instâncias saudáveis, para evitar prejuízos.
 *   Trabalha no nível da aplicação, direciona o Tráfego para um Servidor que executa uma ação específica (**Camada 7 das Redes**).
@@ -102,9 +102,9 @@ Ele se baseia em **6 Pilares**:
 
 É onde se torna fácil configurar, operar, e enviar notificações a partir da Nuvem.
 
-*   Permite aos desenvolvedores com uma alta, flexível e com capacidade de custo-efetivo a publicarem mensagens a partir de aplicações e imediatamente entregá-las aos seus inscritos.
+*   Permite aos desenvolvedores publicarem mensagens com capacidade de custo-efetivo a partir de aplicações, e imediatamente entregá-las aos seus inscritos.
 *   Os inscritos podem receber essas notificações em um ambiente ou em outra aplicação.
-*   Resolve o problema de inscritos apropriados não receberem informação importante que eles deveriam estar cientes, como eventos ocorridos nas aplicações ou nas infraestruturas.
+*   O SNS resolve o problema de inscritos apropriados não receberem informação importante, que eles deveriam estar cientes, como eventos ocorridos nas aplicações ou nas infraestruturas.
 
 **Modelo**: **Tópico** (**Pub/Sub** - Publicar/Assinar).
 **Ação**: **Empurra** (**Push**) a mensagem imediatamente para todos os assinantes.
@@ -146,7 +146,7 @@ Uma **imagem de contêiner** é um pacote de software leve, independente e execu
 
 *   Depende de um **Host** (instância EC2 ou EKS).
 *   Depende de um acionador/gestor de containers = **Docker** (mais usado).
-*   Contêiner - Aplicações + Bibliotecas independentes do HW/SW.
+*   Contêiner - Aplicações + Bibliotecas independentes do Hardware/Software.
 
 ### Amazon Elastic Container Service (Amazon ECS)
 
@@ -163,7 +163,7 @@ Uma **imagem de contêiner** é um pacote de software leve, independente e execu
 
 ### AWS Fargate
 
-Mecanismo de computação **serverless**, permitindo rodar aplicações Docker sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e pagando apenas pelos recursos usados (CPU/Memória por segundo), com segurança e isolamento por contêiner.
+Mecanismo de computação **serverless**, que permite rodar aplicações Docker sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e pagando apenas pelos recursos usados (CPU/Memória por segundo), com segurança e isolamento por contêiner.
 
 *   Execute Contêineres sem servidor com o Amazon ECS ou Amazon EKS.
 *   Pague somente o que usar.
@@ -190,16 +190,16 @@ Traz serviços, infraestrutura e modelos operacionais nativos da AWS para o loca
 ### Amazon CloudFront
 
 *   **Serviço de Content Delivery Network (CDN)** - Leva o Conteúdo para os mais de 700 locais de borda para que o serviço fique próximo ao cliente e o cliente consuma com mais velocidade e mais qualidade.
-*   Armazena em cache o conteúdo em **Edge Locations** (locais de borda) ao redor do mundo.
+*   Armazena em cache o conteúdo em **pop's** (locais de borda) ao redor do mundo.
 *   Melhora a **latência** (velocidade) e a **disponibilidade**.
 *   Usado para entregar conteúdo estático (imagens, vídeos, HTML) e dinâmico.
 *   Integra-se com o **AWS Shield** para proteção contra ataques DDoS.
 
-> **Edge Location**: Local físico onde o CloudFront armazena cópias do seu conteúdo (cache) para que os usuários finais possam acessá-lo mais rapidamente.
+> **Pop's ou Edge Location**: Local físico onde o CloudFront armazena cópias do seu conteúdo (cache) para que os usuários finais possam acessá-lo mais rapidamente.
 
 ### AWS Global Accelerator
 
-*   Se uma empresa quer melhorar a disponibilidade e o desempenho das aplicações hospedadas na AWS é ele que usam. Ele usa a rede global da AWS para rotear o tráfego para o endpoint regional ideal com base na integridade, na localização do cliente e em outras políticas personalizadas.
+*   Se uma empresa quer melhorar a disponibilidade e o desempenho das aplicações hospedadas na AWS é ele que usam. Ele usa a rede global da AWS para rotear o tráfego para o endpoint regional ideal, com base na integridade, na localização do cliente e em outras políticas personalizadas.
 *   Melhora a **disponibilidade** e o **desempenho** de suas aplicações usando a rede global da AWS.
 *   Usa **endereços IP estáticos** de entrada que atuam como um ponto de entrada fixo para seus aplicativos.
 *   Direciona o tráfego para o endpoint mais saudável e mais próximo.
@@ -278,7 +278,7 @@ Sistema de arquivo simples, dimensionável e totalmente gerenciado.
 #### Amazon S3 (Simple Storage Service)
 
 *   Armazenar e acessar qualquer tipo de dados pela internet a qualquer hora e qualquer lugar.
-*   Você não precisa estimar quando de storage space você vai precisar, cria o **bucket** e adiciona quantos arquivos for precisar, é elástico e escala automaticamente de acordo com o storage requirements.
+*   Você não precisa estimar quando de storage space você vai precisar, cria o **bucket** e adiciona quantos arquivos for preciso, é elástico e escala automaticamente de acordo com o storage requirements.
 *   Arquivos upados no Amazon S3 são automaticamente **replicados** entre as múltiplas AZ's na Região.
 *   Virtualmente **ilimitado** e no formato **serverless**.
 *   Tem **Versionamento**, mas não vem ativado por padrão. No caso de acionamento, você paga por todas versões de forma acumulativa.
@@ -295,7 +295,7 @@ Essa é a estrutura fundamental de um objeto no Amazon S3:
 #### Tipos de Armazenamento S3
 
 *   **S3 Standard**: Uso geral, acesso frequente.
-*   **S3 intelligent-Tiering**: Padrões de acesso imprevisíveis ou variáveis (ele move os dados sozinhos para economizar).
+*   **S3 Intelligent-Tiering**: Padrões de acesso imprevisíveis ou variáveis (ele move os dados sozinhos para economizar).
 *   **S3 Standard-IA**: Acesso infrequente, mas precisa de recuperação rápida.
 *   **S3 One Zone-IA**: Acesso infrequente, dados recriáveis (se a AZ cair, perde os dados).
 *   **S3 Glacier Instant Retrieval**: Arquivamento de longa duração com acesso imediato.
@@ -312,7 +312,7 @@ Dividido em:
 
 *   **Amazon Relational Database Service (Amazon RDS)** - Relacional
 *   **Amazon DynamoDB** - Não relacional (baseado em key e value)
-*   **AWS Database Migration Service (DMS)** - Pode levar/migrar o Banco de dados para nuvem (no modelo híbrido, por exemplo)
+*   **AWS Database Migration Service (DMS)** - Pode levar/migrar o Banco de Dados para nuvem (no modelo híbrido, por exemplo)
 
 ### Amazon Relational Database Service (AWS RDS)
 
@@ -326,31 +326,31 @@ Dividido em:
 
 **Provisionamento**:
 
-*   Pode ser criado uma implantação **Multi-AZ** (roda a sua aplicação ou Banco de Dados em 2 ou mais Zonas de Disponibilidades).
-*   Contém **Cluters** (servidores, instâncias ou BD que trabalham juntos como um sistema único).
+*   Pode ser criado uma implantação **Multi-AZ** (roda a sua aplicação ou Banco de Dados em 2 ou mais AZ's).
+*   Contém **Cluters** (Servidores, Instâncias ou BD que trabalham juntos como um sistema único).
 *   No caso de **Failover** (uma AZ cair) o sistema muda automaticamente para a outra sem intervenção manual.
 *   Altos níveis de disponibilidade e confiabilidade.
-*   Use **réplicas de leitura** para cargas de trabalho do banco de dados com uso intenso de leitura. Para desafogar o uso da instância principal.
+*   Use **réplicas de leitura** para cargas de trabalho do BD com uso intenso de leitura, para desafogar o uso da Instância principal.
 *   Bancos de Dados Relacionais organizam dados estruturados em tabelas (linhas e colunas), seguindo um esquema pré-definido e usando **SQL**.
 
 **Banco de Dados Suportados pela Amazon**:
 
-*   **Amazon Aurora**: Banco de Dados proprietário da AWS (não é open-source). É compatível com MySQL e PostgreSQL, mas oferece **5x mais desempenho** que o MySQL padrão e custa **1/10 dos bancos comerciais**. Possui tolerância a falhas automática (repara dados sozinho).
+*   **Amazon Aurora**: Banco de Dados proprietário da AWS (não é open-source). É compatível com MySQL e PostgreSQL, mas oferece **5x mais desempenho** que o MySQL padrão e custa **1/10 dos BD comerciais**. Possui tolerância a falhas automática (repara dados sozinho).
 
 Os itens abaixo são "Motores de Banco de Dados" (**Database Engines**) que você pode escolher para rodar dentro do serviço Amazon RDS:
 
-*   **PostgreSQL**: Relacional, Open-Source e avançado. Focado em extensibilidade e conformidade rigorosa com padrões SQL.
-*   **MySQL**: Relacional, open-source e o mais popular do mundo para aplicações web. Simples e confiável.
-*   **MariaDB**: Relacional, open-source. É um "fork" (derivado) do MySQL, criado pelos fundadores originais do MySQL.
-*   **Oracle Db**: Relacional, comercial/empresarial. Focado em grandes corporações, robusto e requer gerenciamento de licenças.
-*   **Microsoft SQL Server**: Relacional, comercial da Microsoft. Ideal para ambientes corporativos que já usam Windows e .NET.
-*   **IBM DB2**: Relacional, comercial da IBM. Focado em cargas de trabalho empresariais críticas (adicionado recentemente ao RDS).
+*   **PostgreSQL**: Focado em extensibilidade e conformidade rigorosa com padrões SQL. [Relacional, Open-Source e avançado]
+*   **MySQL**: O mais popular do mundo para aplicações web. Simples e confiável. [Relacional, open-source]
+*   **MariaDB**: É um "fork" (derivado) do MySQL, criado pelos fundadores originais do MySQL. [Relacional, open-source] 
+*   **Oracle DB**: Focado em grandes corporações, robusto e requer gerenciamento de licenças. [Relacional, comercial/empresarial] 
+*   **Microsoft SQL Server**: Ideal para ambientes corporativos que já usam Windows e .NET. [Relacional, comercial da Microsoft] 
+*   **IBM DB2**: Focado em cargas de trabalho empresariais críticas (adicionado recentemente ao RDS). [Relacional, comercial da IBM] 
 
 ### Amazon Dynamo DB
 
 Banco de Dados **Não Relacional Serveless** que pode guardar e recuperar qualquer quantidade de dado em qualquer level de tráfego requerido.
 
-*   Você pode escalar suas tabelas de banco de dado aumentando ou diminuindo a capacidade sem qualquer diferença de tempo.
+*   Você pode escalar suas tabelas de BD aumentando ou diminuindo a capacidade sem qualquer diferença de tempo.
 *   Sem servidores para serem gerenciados, só seleciono a Tabela e começo a usar.
 *   Desempenho de **milissegundos de um dígito** em qualquer escala.
 *   Banco de dados de documento e **valores-chave (key-value) NoSQL** rápido e flexível. Documentos estilo Json.
@@ -363,17 +363,16 @@ Banco de Dados **Não Relacional Serveless** que pode guardar e recuperar qualqu
 
 ### AWS Database Migration Service (AWS DMS)
 
-*   Migra bancos de dados para a AWS com facilidade e segurança.
-*   Migra dados e para os bancos de dados mais usado.
-*   Mantenha a operação completa dos bancos de dados de origem durante a migração.
+*   Migra BD para a AWS com facilidade e segurança.
+*   Migra Dados para os Bancos de Dados mais usado.
+*   Mantenha a operação completa dos BD de origem durante a migração.
 *   Migra Bancos de Dados Relacionais e Não Relacionais e outros tipos de Armazenamento de Dados.
-*   Mantém seu Banco de Dados enquanto a migração ocorre.
 
-**Exp.**: My SQL ⮕ AWS DMS ⮕ Amazon Aurora (exp destino)
+**Exp.**: My SQL ⮕ AWS DMS ⮕ Amazon Aurora 
 
 ### Palavras chaves: (CAI NA PROVA)
 
-*   **Amazon Redshift**: **Data Warehouse** (Armazém de dados), Big Data, SQL, **OLAP** (Consultas complexas em petabytes). (Dados tão grandes que fica vermelho/RED)
+*   **Amazon Redshift**: **Data Warehouse** (Armazém de dados), Big Data, SQL, **OLAP** (Consultas complexas em Petabytes). (Dados tão grandes que fica vermelho/RED)
 *   **Amazon DocumentDB**: Compatível com **MongoDB**, documentos JSON.
 *   **Amazon Neptune**: Banco de dados de **Grafos** (**Graphs**), Relacionamentos complexos, Redes Sociais.
 *   **Amazon QLDB** (Quantum Ledger Database): **Ledger Centralizado**, **Imutável**, Criptograficamente verificável. (Diferente de Blockchain, pois tem uma autoridade central).
@@ -389,7 +388,7 @@ Banco de Dados **Não Relacional Serveless** que pode guardar e recuperar qualqu
 
 *   **Visibilidade** - Enxergar o que está acontecendo com sua aplicação.
 *   **Auditabilidade** - Saber quem fez o que (onde, quem, quando).
-*   **Controlabilidade** - Saber que meu time pode acessar meus recursos na nuvem (defino permissões específicas).
+*   **Controlabilidade** - Meu time pode acessar meus recursos na nuvem (defino permissões específicas).
 *   **Agilidade** - Preciso de agilidade para agir.
 
 ### Modelo de Responsabilidade Compartilhada:
@@ -439,12 +438,12 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 ### Amazon Inspector
 
-*   Serviço de **avaliação de segurança automatizada**.
-*   Verifica vulnerabilidades em instâncias EC2 e imagens de contêiner.
+*   Serviço de **Avaliação de Segurança Automatizada**.
+*   **Verifica vulnerabilidades** em instâncias EC2 e imagens de Contêiner.
 
 ### Amazon GuardDuty
 
-*   Serviço de **detecção de ameaças** inteligente e contínuo.
+*   Serviço de **Detecção de Ameaças** inteligente e contínuo.
 *   Monitora atividades maliciosas e comportamento não autorizado.
 
 ### Amazon Macie
@@ -490,8 +489,10 @@ Principal ferramenta de **monitoramento** e **observação**. Dispõe de Data e 
 
 ### AWS CloudTrail
 
-*   Vai **rastrear atividade do usuário** e **solicitações api** em toda infra da aws, etc.
+*   Vai **rastrear atividade do usuário** e **solicitações API** em toda infra da AWS, etc.
 *   Fornece um registro de ações, eventos e chamadas de API feitas por um usuário, função ou serviço da AWS.
+
+> **Obs.:** Trail = Trilha/Rastro
 
 ### AWS Trusted Advisor
 
@@ -561,8 +562,8 @@ Ele organiza o processo em **6 Perspectivas**:
 
 > **Dica de prova**: Geralmente perguntam "Qual dessas é uma perspectiva de Negócios?" e colocam "Segurança" como pegadinha. Lembre-se que **Pessoas** e **Governança** são do lado do Negócio, não Técnico.
 >
-> *   O gerenciamento de desempenho e capacidade é um recurso da perspectiva das **Operações** no AWS CAF.
-> *   O gerenciamento de portfólio de aplicações é um recurso da perspectiva de **Governança** no AWS CAF.
+> *   O gerenciamento de **Desempenho e Capacidade** é um recurso da perspectiva das **Operações** no AWS CAF.
+> *   O gerenciamento de **Portfólio de Aplicações** é um recurso da perspectiva de **Governança** no AWS CAF.
 
 ### Amazon CodeWhisperer
 
@@ -571,7 +572,7 @@ Ele organiza o processo em **6 Perspectivas**:
 
 ### Família AWS SNOW
 
-*   Os dispositivos da **Família AWS Snow** permitem a captura e o transporte de dados **offline** para a AWS a partir de ambientes desconectados ou robustos.
+*   Os dispositivos da **Família AWS Snow** permitem a captura e o **Transporte de Dados Offline** para a AWS a partir de **ambientes desconectados ou robustos**.
 
 #### AWS Snowball Edge
 
@@ -584,24 +585,39 @@ Ele organiza o processo em **6 Perspectivas**:
 ### Serviços Adicionais
 
 *   **AWS Application Discovery Service**: Ajuda a planejar uma migração para a nuvem AWS. Não pode ser usado para implantar aplicações na nuvem AWS.
+
 *   **Amazon Kinesis Data Streams**: Coleta e processa streams de dados em tempo real.
+
 *   **Amazon Connect**: Fornece uma central de atendimento altamente dimensionável na nuvem AWS. Não é usado para conectar duas redes diferentes. Não confundir com o Direct Connect, que fornece uma conexão privada dedicada.
+
 *   **AWS CDK (Cloud Development Kit)**: É um framework de desenvolvimento de software que pode ser usada para criar recursos de aplicações em nuvem. Trata-se de uma ferramenta que simplifica a criação de recursos.
+
 *   **AWS Storage Gateway**: É um dispositivo de hardware ou dispositivo de software virtual usado para **armazenamento em nuvem híbrida** com cache local. É um serviço de armazenamento híbrido da AWS, ou seja, permite que as aplicações on-primises de um usuário, usem perfeitamente o armazenamento na nuvem da AWS.
+
 *   **Amazon API Gateway**: Use o gateway de API para criar e gerenciar APIs Rest e Web Socket, mas não para implantar a infraestrutura.
-*   **AWS Elastic Beanstalk**: É possível usar o Elastic Beanstalk para implantar, gerenciar e dimensionar aplicações. Oferece a capacidade de rápida implantação e gerenciamento de aplicações na nuvem AWS.
-*   **AWS Batch**: Gerencia ambientes de computação e filas de trabalho. É possível executar milhares de jobs em qualquer escala. Usa instâncias do EC2 para hospedar os jobs em lotes. Pode executar contêineres, mas eles são executados em instâncias EC2.
-*   **Amazon Lightsail**: Fornece uma solução de servidor virtual privado (VPS) para começar na AWS. Indicado para desenvolvedores, pequenas empresas, estudantes. Oferece funcionalidades e recursos de computação, armazenamento e redes. Pode ser usado para implantar e gerenciar sites e aplicações web na nuvem. Lightsail pode executar contêineres, mas os contêineres são executados em instâncias do EC2.
-*   **AWS X-RAY**: É um serviço usado para identificar e depurar aplicações, bem como para descobrir oportunidades de otimização em seus servidores de aplicações. O recurso mais famoso do X-Ray é desenhar um mapa visual de toda a sua aplicação. Ele mostra bolinhas conectadas e, se uma delas estiver vermelha, você sabe instantaneamente que o erro está ali.
-*   **Amazon QuickSight**: É um serviço de **b.i** usado para visualização de dados. É possível combinar dados de vários serviços em um só painel, o que pode trazer informações sobre seus dados mais rapidamente. Pega dados "feios" e brutos e os transforma instantaneamente em Gráficos Coloridos, Dashboards e Painéis Visuais.
+
+*   **AWS Elastic Beanstalk**: É possível usar o Elastic Beanstalk para **implantar, gerenciar e dimensionar Aplicações**. Oferece a capacidade de rápida implantação e gerenciamento de aplicações na nuvem AWS.
+
+*   **AWS Batch**: Gerencia ambientes de computação e filas de trabalho. É possível executar milhares de jobs em qualquer escala. Usa instâncias do EC2 para hospedar os jobs em lotes.
+
+*   **Amazon Lightsail**: Fornece uma solução de **servidor virtual privado (VPS) para começar na AWS**. Indicado para desenvolvedores, pequenas empresas, estudantes. Oferece funcionalidades e recursos de computação, armazenamento e redes. Pode ser usado para implantar e gerenciar sites e aplicações web na nuvem. 
+
+*   **AWS X-RAY**: É um serviço usado para **identificar e depurar aplicações, e descobrir oportunidades de otimização em seus servidores de aplicações**. O recurso mais famoso do X-Ray é **desenhar um mapa visual** de toda a sua aplicação. Ele mostra bolinhas conectadas e, se uma delas estiver vermelha, você sabe instantaneamente que o erro está ali.
+
+*   **Amazon QuickSight**: É um serviço de B.I usado para **visualização de dados**. É possível combinar **dados de vários serviços em um só painel**, o que pode trazer informações sobre seus dados mais rapidamente. Pega dados "feios" e brutos e os transforma instantaneamente em Gráficos Coloridos, Dashboards e Painéis Visuais.
+
 *   **AWS CloudFormation**: Permite reutilizar modelos para configurar recursos de forma consistente e repetida em várias Regiões. Para uma Empresa que quer implantar rapidamente uma infraestrutura duplicada em uma Região AWS diferente para criar redundância global.
 
 ### Serviços de Machine Learning (ML)
 
 *   **Amazon Transcribe**: É um serviço de reconhecimento de fala que usa modelos de Machine Learning para converter áudio em texto. Pode ser usado como um serviço de transcrição independente.
+
 *   **Amazon Polly**: É um serviço que transforma texto em **fala realista**. Oferece a capacidade de criar aplicações que falam. **Não** adiciona recursos de conversão de fala em textos.
+
 *   **Amazon Textract**: É um serviço de Machine Learning que extrai automaticamente texto, manuscrito e dados de documentos digitalizados. Vai além do reconhecimento óptico de caracteres (OCR) básico para identificar, entender, e extrair dados de formulários e tabelas. **Não** adiciona recursos de conversão de fala.
+
 *   **Amazon Comprehend**: É um serviço de processamento de linguagem natural (PLN) que usa modelos de Machine Learning para descobrir informações em dados não estruturados. Desenvolve insights por meio do reconhecimento de entidades, frases importantes, linguagem, sentimentos e outros elementos comuns de documentos. **Não** adiciona recursos de conversão de fala em textos às aplicações.
+
 *   **Amazon Rekognition**: É usado para analisar fotos e vídeos.
 
 ## Geral:
@@ -622,6 +638,7 @@ Ele organiza o processo em **6 Perspectivas**:
 
 *   Nota vai de 100 a 1000.
 *   Sendo **700** - **70%** a pontuação mínima.
+*   Tem que acertar pelo menos 46 questões para ser aprovado.
 
 **Preparação para prova (skill builder)**:
 
