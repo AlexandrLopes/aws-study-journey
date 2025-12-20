@@ -422,7 +422,7 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 ### AWS Artifact
 
-*   Portal de **conformidade** e **documentação**.
+*   Portal de **conformidade** e **documentação**. Geralmente relacionado com **Auditoria**
 *   Acesso a relatórios de conformidade da AWS (SOC, PCI, ISO).
 *   É o portal de autoatendimento (gratuito) onde você baixa relatórios de conformidade e gerencia acordos legais com a AWS.
 
@@ -444,12 +444,12 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 ### Amazon GuardDuty
 
-*   Serviço de **Detecção de Ameaças** inteligente e contínuo.
+*   Serviço de **Detecção de AMEAÇAS** inteligente e contínuo. (Hackers, Mineração de Cripto)
 *   Monitora atividades maliciosas e comportamento não autorizado.
 
 ### Amazon Macie
 
-*   Serviço de **segurança de dados** e privacidade.
+*   Serviço de **Segurança de DADOS SENSÍVEIS** e privacidade. (PII, Cartões de Crédito)
 *   O Macie aplica técnicas de Machine Learning e correspondências de padrões para identificar dados sigilosos, incluindo PII (informações de identificação pessoal).
 *   Pode gerar uma descoberta se dados sigilosos forem encontrados.
 *   Pode selecionar buckets especificos do S3 para o Macie pesquisar.
@@ -490,10 +490,15 @@ Principal ferramenta de **monitoramento** e **observação**. Dispõe de Data e 
 
 ### AWS CloudTrail
 
-*   Vai **rastrear atividade do usuário** e **solicitações API** em toda infra da AWS, etc.
+*   Vai **rastrear atividade do usuário (QUEM)** e **solicitações API** em toda infra da AWS, etc.
 *   Fornece um registro de ações, eventos e chamadas de API feitas por um usuário, função ou serviço da AWS.
 
 > **Obs.:** Trail = Trilha/Rastro
+
+
+### VPC Flow Logs
+
+* Faz monitoramento de **TRÁFEGO** de rede (IPs, portas, pacotes).
 
 ### AWS Trusted Advisor
 
@@ -597,7 +602,7 @@ Ele organiza o processo em **6 Perspectivas**:
 
 *   **Amazon API Gateway**: Use o gateway de API para criar e gerenciar APIs Rest e Web Socket, mas não para implantar a infraestrutura.
 
-*   **AWS Elastic Beanstalk**: É possível usar o Elastic Beanstalk para **implantar, gerenciar e dimensionar Aplicações**. Oferece a capacidade de rápida implantação e gerenciamento de aplicações na nuvem AWS.
+*   **AWS Elastic Beanstalk**: É possível usar o Elastic Beanstalk para **implantar, gerenciar e dimensionar Aplicações Web Completas**. Oferece a capacidade de rápida implantação e gerenciamento de aplicações na nuvem AWS.
 
 *   **AWS Batch**: Gerencia ambientes de computação e filas de trabalho. É possível executar milhares de jobs em qualquer escala. Usa instâncias do EC2 para hospedar os jobs em lotes.
 
