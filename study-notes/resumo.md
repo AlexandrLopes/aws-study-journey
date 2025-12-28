@@ -635,6 +635,71 @@ Ele organiza o processo em **6 Perspectivas**:
     *   **RE**: Enterprise Support inclui acesso a um TAM designado.
 *   **Responsabilidade da AWS**: A AWS é responsável pelo **descomissionamento seguro da mídia** como parte da proteção da infraestrutura global da AWS.
 
+# Modelos de Computação em Nuvem (Cloud Computing Models)
+
+Uma hierarquia que define o nível de controle e responsabilidade do usuário versus o provedor (AWS).
+
+---
+
+## 1. IaaS (Infrastructure as a Service)
+**"Infraestrutura como Serviço"**
+
+* **Definição:** É o aluguel do hardware bruto (virtualizado). A AWS fornece o servidor, a rede e o armazenamento.
+* **Responsabilidade do Usuário:** Gerenciar o Sistema Operacional (Windows/Linux), instalar patches, configurar firewall, gerenciar dados e aplicações.
+* **Analogia:** **Aluguel de Carro**. O carro é seu por um tempo, mas você dirige, abastece e troca o pneu.
+* **Exemplos AWS:**
+    * **Amazon EC2** (Servidores Virtuais)
+    * **Amazon EBS** (Discos/Volumes)
+    * **Amazon VPC** (Rede)
+
+---
+
+## 2. PaaS (Platform as a Service)
+**"Plataforma como Serviço"**
+
+* **Definição:** Ambiente focado em **desenvolvedores**. A AWS entrega a plataforma pronta (com S.O., atualizações e runtime instalados). Remove a necessidade de gerenciar a infraestrutura subjacente.
+* **Responsabilidade do Usuário:** Apenas o **Código** e os **Dados**. A AWS cuida do Sistema Operacional e do Hardware.
+* **Analogia:** **Táxi/Uber**. Você entra, diz o destino (código) e o motorista (AWS) dirige e cuida da manutenção do carro.
+* **Exemplos AWS:**
+    * **AWS Elastic Beanstalk** (Deploy automático de aplicações web)
+    * **Amazon RDS** (Banco de dados relacional gerenciado)
+
+---
+
+## 3. FaaS (Function as a Service)
+**"Função como Serviço"** (Muitas vezes visto como uma evolução do PaaS)
+
+* **Definição:** Computação baseada em eventos. Você não vê servidores nem a plataforma. Você apenas carrega pequenos pedaços de código (funções) que rodam em resposta a gatilhos.
+* **Características Chave:** Execução efêmera (curta duração), sem servidor visível, escalabilidade automática imediata.
+* **Exemplo AWS:**
+    * **AWS Lambda** (Executa código sem provisionar servidores)
+
+---
+
+## 4. SaaS (Software as a Service)
+**"Software como Serviço"**
+
+* **Definição:** Produto final completo. O usuário não gerencia nada, nem hardware, nem software, nem atualizações.
+* **Responsabilidade do Usuário:** Apenas usar a aplicação e configurar seus usuários/preferências.
+* **Analogia:** **Ônibus**. A rota e o veículo já existem e são operados por terceiros. Você apenas entra e usa o serviço.
+* **Exemplos Gerais:** Gmail, Netflix, Zoom.
+* **Exemplos AWS:**
+    * **Amazon Connect** (Contact Center na nuvem)
+    * **AWS Trusted Advisor** (Ferramenta de recomendações)
+    * **Amazon Chime** (Serviço de reuniões)
+
+---
+
+## ⚡ Tabela Resumo para a Prova
+
+| Modelo | Significado | O que você gerencia? | O que a AWS gerencia? | Exemplo Clássico |
+| :--- | :--- | :--- | :--- | :--- |
+| **IaaS** | Infraestrutura | S.O., Apps, Dados, Runtime | Hardware, Virtualização | **EC2** |
+| **PaaS** | Plataforma | Código, Dados | S.O., Hardware, Runtime | **Elastic Beanstalk** |
+| **FaaS** | Função | Apenas a Função (Código) | Tudo o resto | **Lambda** |
+| **SaaS** | Software | Nada (Apenas usa) | Tudo (App completa) | **Amazon Connect** |
+
+
 ## Documentos recomendados:
 
 *   Visão geral da AWS: [https://d1.awsstatic.com/whitepapers/aws-overview.pdf](https://d1.awsstatic.com/whitepapers/aws-overview.pdf)
