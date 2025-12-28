@@ -36,8 +36,9 @@ Pague somente pelo que usar.
 
 ## Escalonamento
 
-*   **Scaling Manual**: Cabe ao Cliente colocar e parar Instâncias de forma manual.
-*   **EC2 Auto Scaling**: É o dimensionamento de forma automática, **Scaling Preditivo** (cria). O Auto Scaling Preditivo usa Machine Learning para analisar o histórico e já deixa as máquinas criadas e prontas antes do tráfego aumentar, para não haver lentidão no início do pico.
+*   **Scaling Manual**: Cabe ao cliente *colocar* e *parar* instâncias de forma manual.
+*   **EC2 Auto Scaling**: É o dimensionamento de forma automática.
+*   **Auto Scaling Preditivo**: usa Machine Learning para analisar o histórico e já deixa as máquinas criadas e prontas antes do tráfego aumentar, para não haver lentidão no início do pico.
 
 ### Amazon EC2 Auto Scaling:
 
@@ -45,7 +46,7 @@ Adiciona ou remove automaticamente (por i.a) Instâncias do EC2 de acordo com as
 
 *   Entrega Capacidade Computacional.
 *   Mantém a disponibilidade do aplicativo.
-*   Beneficia-se do **Scaling dinâmico** (acompanha uma métrica) e **preditivo**.
+*   Beneficia-se do **Scaling Dinâmico** (acompanha uma métrica) e **Scaling Preditivo**(Machine Learning).
 *   Defino o tamanho do Grupo definindo os Limites que coloquei.
 *   Pago somente o que for usado.
 
@@ -66,13 +67,13 @@ Adiciona ou remove automaticamente (por i.a) Instâncias do EC2 de acordo com as
 *   Fornece um único ponto de contato para seu grupo do Auto Scaling.
 *   Passa a ser o ponto de contato, as solicitações chegam nele, e ele que distribui o tráfego para os Servidores.
 *   Pode distribuir o Tráfego para Servidores em ZA's diferentes.
-*   Faz **Health Check** - olha para a saúde das instâncias, e caso uma falhe, ele corta a comunicação.
+*   Faz **Health Check** - olha para a saúde das *instâncias*, e caso uma *falhe, ele corta a comunicação*.
 *   Só é direcionado para Instâncias saudáveis, para evitar prejuízos.
 *   Trabalha no nível da aplicação, direciona o Tráfego para um Servidor que executa uma ação específica (**Camada 7 das Redes**).
 
 No exemplo da Black Friday, ele usa tanto o **Autoscaling** quanto o **Elastic Load Balance**:
 
-*   O Autoscaling cria as Instâncias de acordo com o volume necessário, e quem faz o direcionamento das cargas dessas Instâncias é o Elastic Load Balance.
+*   *O Autoscaling cria as Instâncias de acordo com o volume necessário, e quem faz o direcionamento das cargas dessas Instâncias é o Elastic Load Balance.*
 
 ## Arquitetura da Aplicação
 
