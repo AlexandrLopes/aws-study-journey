@@ -472,6 +472,8 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 ### AWS Secrets Manager
 
 *   Gerencia, recupera e rotaciona **segredos** (credenciais de banco de dados, chaves de API).
+*   A 'feature' matadora do Secrets Manager é a Rotação Automática de credenciais (integração nativa com RDS, etc).
+*   A rotação pode ocorrer no mínimo há 4 horas.
 
 # Módulo 7
 
