@@ -265,6 +265,7 @@ Quatro tipos de Volume para optimizar preço e desempenho:
 Sistema de arquivo simples, dimensionável e totalmente gerenciado.
 
 > **Obs**: Faz justamente o que a Obs da EBS não consegue fazer.
+> **Obs**: É projetado principalmente para ser usado com **sistemas operacionais Linux**, msa também é compatível com instâncias EC2 Mac.
 
 *   Dimensiona de acordo com a demanda.
 *   Armazena dados entre várias ou outras instâncias em zonas de disponibilidade diferentes.
