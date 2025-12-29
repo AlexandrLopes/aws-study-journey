@@ -700,6 +700,51 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 | **SaaS** | Software | Nada (Apenas usa) | Tudo (App completa) | **Amazon Connect** |
 
 
+# Planos de Suporte da AWS
+
+A AWS divide o suporte em **4 níveis principais**:
+
+## 1. Basic (Básico)
+
+* **A quem se destina:** Usuários que estão apenas explorando ou aprendendo.
+* **Custo:** Gratuito (já incluído em todas as contas).
+* **Principal Diferença:** O suporte técnico é restrito. Você só consegue ajuda humana para questões de **faturamento** e **limites da conta**. Para problemas técnicos, você depende de documentação e fóruns.
+
+## 2. Developer (Desenvolvedor)
+
+* **A quem se destina:** Ambientes de teste e desenvolvimento inicial.
+* **Custo:** A partir de $29/mês.
+* **Principal Diferença:** Libera acesso ao suporte técnico via e-mail, mas apenas em **horário comercial**. O tempo de resposta para falhas gerais é de cerca de 12 a 24 horas.
+
+## 3. Business (Negócios)
+
+* **A quem se destina:** Cargas de trabalho de produção (empresas que já rodam sistemas na AWS).
+* **Custo:** A partir de $100/mês (ou porcentagem do uso).
+* **Principal Diferença:** O suporte passa a ser **24/7** (24 horas por dia, 7 dias por semana) via chat, telefone e e-mail. O tempo de resposta para sistema inoperante cai para **menos de 1 hora**.
+
+## 4. Enterprise (Empresarial)
+
+* **A quem se destina:** Grandes empresas com sistemas de missão crítica que não podem parar.
+* **Custo:** A partir de $15.000/mês (ou porcentagem do uso).
+* **Principal Diferença:** Acesso a um **Gerente Técnico de Contas (TAM)**, que é um consultor dedicado à sua empresa. O tempo de resposta para falhas críticas é de **15 minutos**.
+
+---
+
+## Resumo das Diferenças Chave
+
+Para facilitar a visualização rápida:
+
+| Recurso | Basic | Developer | Business | Enterprise |
+| --- | --- | --- | --- | --- |
+| **Atendimento Humano** | Só p/ Fatura | Horário Comercial | **24/7** | **24/7** |
+| **Canais de Contato** | Web | E-mail | Chat, Fone, E-mail | Chat, Fone, E-mail |
+| **Tempo de Resposta** | -- | 12h-24h (geral) | < 1h (urgente) | **15 min (crítico)** |
+| **Consultoria Dedicada** | Não | Não | Não | **Sim (TAM)** |
+
+
+---
+
+
 ## Documentos recomendados:
 
 *   Visão geral da AWS: [https://d1.awsstatic.com/whitepapers/aws-overview.pdf](https://d1.awsstatic.com/whitepapers/aws-overview.pdf)
@@ -724,3 +769,5 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 **Treinamentos Digitais**:
 
 *   [https://explore.skillbuilder.aws](https://explore.skillbuilder.aws)
+
+
