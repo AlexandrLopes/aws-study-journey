@@ -13,13 +13,13 @@ Usa capacidade computacional redimensionável e segura.
 Inicia instância de servidor em minutos.
 Pague somente pelo que usar.
 
-### Tipos de Instâncias (modelo do servidor) (CAI NA PROVA)
+### Tipos de Instâncias 
 
-*   **De uso Geral**: Equilibra Recursos de Computação, Memória e Rede, adequada para uma ampla variedade de cargas de trabalho.
-*   **Otimizada para Computação**: Para Computadores de Alto Desempenho.
-*   **Otimizada para Memória**: Banco de Dados de Alto Desempenho.
-*   **Computação acelerada**: Usa Aceleradores de Hardware como GPU ou TCU para realizar tarefas específicas mais rápido que computadores convencionais.
-*   **Otimizada para armazenamento**: Adequada para aplicações de Data Warehouse.
+*   **De uso Geral**: Equilibra Recursos de Computação, Memória e Rede, adequada para uma ampla variedade de cargas de trabalho. ("**M**")
+*   **Otimizada para Computação**: Para Computadores de Alto Desempenho. ("**C**")
+*   **Otimizada para Memória**: Banco de Dados de Alto Desempenho. ("**R**")
+*   **Computação acelerada**: Usa Aceleradores de Hardware como GPU ou TCU para realizar tarefas específicas mais rápido que computadores convencionais. ("**T**")
+*   **Otimizada para armazenamento**: Adequada para aplicações de Data Warehouse. ("**I**")
 
 > **Data Warehouse**: É um Repositório Centralizado e Organizado que coleta dados de diversas fontes, como banco de dados transacionais e sistemas de marketing, para suportar análises de negócios e tomada de decisões estratégicas.
 
