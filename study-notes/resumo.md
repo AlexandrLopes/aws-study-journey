@@ -627,6 +627,8 @@ Ele organiza o processo em **6 Perspectivas**:
 
 *   **Amazon Rekognition**: É usado para analisar fotos e vídeos.
 
+* **AWS Config**: Avalia, audita e avalia as configurações dos recursos AWS. Ele pode ter regras para verificar conformidade (ex: região permitida).
+
 ## Geral:
 
 *   Com a computação em nuvem AWS, você pode trocar **custos fixos por custos variáveis** pagando somente pelos recursos que usar.
