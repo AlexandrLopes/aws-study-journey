@@ -627,7 +627,7 @@ Ele organiza o processo em **6 Perspectivas**:
 
 *   **Amazon Rekognition**: É usado para analisar fotos e vídeos.
 
-* **AWS Config**: Avalia, audita e avalia as configurações dos recursos AWS. Ele pode ter regras para verificar conformidade (ex: região permitida).
+* **AWS Config**: Avalia, audita e avalia as configurações dos recursos AWS. **monitora a Configuração**  Ele pode ter regras para verificar conformidade (ex: região permitida). 
 
 ## Geral:
 
