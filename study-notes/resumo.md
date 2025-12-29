@@ -425,13 +425,13 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 *   Acesso a relatórios de conformidade da AWS (SOC, PCI, ISO).
 *   É o portal de autoatendimento (gratuito) onde você baixa relatórios de conformidade e gerencia acordos legais com a AWS.
 
-### AWS Shield
+### AWS Shield - Camada 3 e 4 (Rede/Transporte)
 
 *   Proteção contra ataques de **DDoS** (Distributed Denial of Service).
 *   **Standard**: Proteção automática para todos os clientes.
 *   **Advanced**: Proteção aprimorada e relatórios de ataque.
 
-### AWS WAF (Web Application Firewall)
+### AWS WAF (Web Application Firewall) - Camada 7 (Aplicação)
 
 *   Protege aplicações web contra **exploits** comuns (SQL Injection, Cross-Site Scripting).
 *   Funciona na **Camada 7** (Aplicação).
