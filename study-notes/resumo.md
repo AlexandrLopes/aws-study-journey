@@ -15,8 +15,6 @@ Pague somente pelo que usar.
 
 ### Tipos de Instâncias (modelo do servidor) (CAI NA PROVA)
 
-[https://aws.amazon.com/pt/ec2/instance-types/](https://aws.amazon.com/pt/ec2/instance-types/)
-
 *   **De uso Geral**: Equilibra Recursos de Computação, Memória e Rede, adequada para uma ampla variedade de cargas de trabalho.
 *   **Otimizada para Computação**: Para Computadores de Alto Desempenho.
 *   **Otimizada para Memória**: Banco de Dados de Alto Desempenho.
