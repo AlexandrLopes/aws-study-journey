@@ -417,7 +417,7 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 *   Gerenciamento centralizado de **múltiplas contas AWS**.
 *   Permite aplicar **Service Control Policies (SCPs)** para governança e controle de permissões em todas as contas.
-*   Consolida o faturamento.
+*   Organizations permite **Consolidated Billing (Faturamento Consolidado)**, somando o uso de todas as contas para atingir faixas de preço menores.
 
 ### AWS Artifact
 
