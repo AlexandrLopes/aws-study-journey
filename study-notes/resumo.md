@@ -162,7 +162,7 @@ Uma **imagem de contêiner** é um pacote de software leve, independente e execu
 
 ### AWS Fargate
 
-Mecanismo de computação **serverless**, que permite rodar aplicações Docker sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e pagando apenas pelos recursos usados (CPU/Memória por segundo), com segurança e isolamento por contêiner.
+Mecanismo de computação **serverless**, que permite rodar **aplicações de Container** (Docker) sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e pagando apenas pelos recursos usados (CPU/Memória por segundo), com segurança e isolamento por contêiner.
 
 *   Execute Contêineres sem servidor com o Amazon ECS ou Amazon EKS.
 *   Pague somente o que usar.
