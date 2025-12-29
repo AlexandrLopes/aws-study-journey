@@ -118,7 +118,6 @@ Envia, Armazena e Recebe mensagens entre eles.
 **Ação**: **Armazena** (**Buffer**) mensagens até que o consumidor vá lá buscá-las (**Pull**).
 **Fluxo**: **1 para 1** (Um envia, um processa). Usado para **desacoplar** componentes que têm velocidades diferentes.
 
-# Módulo 3
 
 ## Serviço de Computação Sem Servidor (Serverless)
 
@@ -160,13 +159,13 @@ Uma **imagem de contêiner** é um pacote de software leve, independente e execu
 
 > **Obs.: Kubernets** é uma plataforma de código aberto que automatiza a implantação, o escalonamento e o gerenciamento de aplicativos conteinerizados.
 
-### AWS Fargate
+### AWS Fargate (Contêineres)
 
-Mecanismo de computação **serverless**, que permite rodar **aplicações de Container** (Docker) sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e pagando apenas pelos recursos usados (CPU/Memória por segundo), com segurança e isolamento por contêiner.
+Mecanismo de *Computação Serverless*, que permite rodar **Aplicações de Contêiner** (Docker) sem precisar provisionar, configurar ou escalar servidores, focando apenas no seu código e *pagando apenas pelos recursos usados (CPU/Memória por segundo)*, com segurança e isolamento por contêiner.
 
 *   Execute Contêineres sem servidor com o Amazon ECS ou Amazon EKS.
 *   Pague somente o que usar.
-*   Serviço de Contêineres **Serveless** (sem instância EC2) **Fargate**.
+*   Serviço de Contêineres *Serveless* (**Fargate**)
 
 ## Infraestrutura Global e Confiabilidade
 
@@ -175,21 +174,30 @@ Mecanismo de computação **serverless**, que permite rodar **aplicações de Co
 *   Quanto mais perto do cliente melhor.
 *   Tem no mundo todo.
 
-### Fatores Considerados ao Selecionar uma Região:
+> **Obs**:  Fatores considerados ao selecionar uma região são: Conformidade com governança de dados e requisitos legais, e proximidade com Clientes.
 
-*   Conformidade com governança de dados e requisitos legais.
-*   Proximidade com Clientes.
 
 ### AWS Outpost
 
-Traz serviços, infraestrutura e modelos operacionais nativos da AWS para o local para uma experiência **híbrida** consistente.
+Traz serviços, infraestrutura e modelos operacionais nativos da AWS para o local físico desejado, com a finalidade de uma **Experiência Híbrida** consistente.
+
+## Características
+
+* Híbrido, Latência Baixa e Resistência de Dados.
+* Precisa de Precisa de **Conexão Constante**, não pode ser para lugares descontectados ou remotos
+* É uma "extensão" viva da região, não funciona desconectado.
+
 
 *   **Família AWS Outpost**: É aquele servidor tradicional que ficará dentro da empresa.
+
+> **Obs**:  Outpost Rack é o "rack" inteiro, de 2 metros.
+> **Obs**: Outpost Server são servidores menores, do tamanho de uma pizza.
+
 
 ### Amazon CloudFront
 
 *   **Serviço de Content Delivery Network (CDN)** - Leva o Conteúdo para os mais de 700 locais de borda para que o serviço fique próximo ao cliente e o cliente consuma com mais velocidade e mais qualidade.
-*   Armazena em cache o conteúdo em **pop's** (locais de borda) ao redor do mundo.
+*   *Armazena em Cache* o conteúdo em **pop's** (locais de borda) ao redor do mundo.
 *   Melhora a **latência** (velocidade) e a **disponibilidade**.
 *   Usado para entregar conteúdo estático (imagens, vídeos, HTML) e dinâmico.
 *   Integra-se com o **AWS Shield** para proteção contra ataques DDoS.
@@ -198,7 +206,7 @@ Traz serviços, infraestrutura e modelos operacionais nativos da AWS para o loca
 
 ### AWS Global Accelerator
 
-*   Se uma empresa quer melhorar a disponibilidade e o desempenho das aplicações hospedadas na AWS é ele que usam. Ele usa a rede global da AWS para rotear o tráfego para o endpoint regional ideal, com base na integridade, na localização do cliente e em outras políticas personalizadas.
+*   Se uma empresa quer *melhorar a disponibilidade e o desempenho das aplicações hospedadas na AWS* é ele que usam. Ele usa a rede global da AWS para rotear o tráfego para o endpoint regional ideal, com base na integridade, na localização do cliente e em outras políticas personalizadas.
 *   Melhora a **disponibilidade** e o **desempenho** de suas aplicações usando a rede global da AWS.
 *   Usa **endereços IP estáticos** de entrada que atuam como um ponto de entrada fixo para seus aplicativos.
 *   Direciona o tráfego para o endpoint mais saudável e mais próximo.
@@ -232,7 +240,6 @@ Traz serviços, infraestrutura e modelos operacionais nativos da AWS para o loca
 > | **Latência** | Mais Baixa e Consistente | Variável |
 > | **Custo** | Mais Alto (Requer Infraestrutura) | Mais Baixo |
 
-# Módulo 5
 
 ## Armazenamento e Banco de Dados
 
@@ -244,8 +251,10 @@ Chamados de **Elastic Block Storage - EBS** ou Armazenamentos em Instâncias.
 
 #### Amazon Elastic Block Store (EBS)
 
-Armazenamento **em Bloco** de Alto Desempenho são feitos em Discos da minha Instância (SSD/HD/etc).
-Aumenta verticalmente em minutos.
+*   Armazenamento **em Bloco** de Alto Desempenho são feitos em Discos da minha Instância (**SSD/HD/etc**).
+*   Aumenta verticalmente em minutos.
+
+> **Obs**: "Escalar Verticalmente" (Scale Up) significa deixar o MESMO recurso maior ou mais potente.
 
 Quatro tipos de Volume para optimizar preço e desempenho:
 
@@ -282,7 +291,7 @@ Sistema de arquivo simples, dimensionável e totalmente gerenciado.
 *   Arquivos upados no Amazon S3 são automaticamente **replicados** entre as múltiplas AZ's na Região.
 *   Virtualmente **ilimitado** e no formato **serverless**.
 *   Tem **Versionamento**, mas não vem ativado por padrão. No caso de acionamento, você paga por todas versões de forma acumulativa.
-*   Evite exclusões acidentais.
+*   Evita exclusões acidentais.
 *   Paga pela hospedagem e pela retirada dos dados.
 *   No armazenamento de objetos, cada objeto consiste em **Value**, **Metadata** e uma **Key**.
 
@@ -294,8 +303,8 @@ Essa é a estrutura fundamental de um objeto no Amazon S3:
 
 #### Tipos de Armazenamento S3
 
-*   **S3 Standard**: Uso geral, acesso frequente.
-*   **S3 Intelligent-Tiering**: Padrões de acesso imprevisíveis ou variáveis (ele move os dados sozinhos para economizar).
+*   **S3 Standard**: Uso geral, acesso *frequente*.
+*   **S3 Intelligent-Tiering**: Padrões de acesso *imprevisíveis ou variáveis* (ele move os dados sozinhos para economizar).
 *   **S3 Standard-IA**: Acesso infrequente, mas precisa de recuperação rápida.
 *   **S3 One Zone-IA**: Acesso infrequente, dados recriáveis (se a AZ cair, perde os dados).
 *   **S3 Glacier Instant Retrieval**: Arquivamento de longa duração com acesso imediato.
@@ -304,7 +313,7 @@ Essa é a estrutura fundamental de um objeto no Amazon S3:
 
 > **Obs**: Esse tempo é o tempo de espera entre o momento que eu solicitei o arquivo e o momento que ele fica disponível para uso.
 > **Obs**: Todos estão em **3 Zonas de Disponibilidade**, exceto o **S3 One Zone de IA**.
-> **Obs**: Prova, saber o **S3 básico** e **Glacier**, **Inteligent-Tiering**.
+> **Obs**: Prova, saber o **S3 Standard**,**Glacier** e **Inteligent-Tiering**.
 
 ## Banco de Dados
 
@@ -313,16 +322,18 @@ Dividido em:
 *   **Amazon Relational Database Service (Amazon RDS)** - Relacional
 *   **Amazon DynamoDB** - Não relacional (baseado em key e value)
 *   **AWS Database Migration Service (DMS)** - Pode levar/migrar o Banco de Dados para nuvem (no modelo híbrido, por exemplo)
+*   **Amazon Redshift (Data Warehouse)**  - Um banco de dados gigantesco feito especificamente para Analytics e Business Intelligence (BI).
+*   **Amazon ElastiCache (Caching)** - Um banco de dados em memória (como o Redis ou Memcached). Ele guarda dados na RAM, não no disco.
+*   **Amazon Aurora** - Faz parte da família RDS, mas é uma versão exclusiva da AWS. É compatível com MySQL e PostgreSQL, mas é muito mais rápido e resiliente.
 
 ### Amazon Relational Database Service (AWS RDS)
 
-*   Automatiza tarefas de Administração.
+*   *Automatiza tarefas de Administração como patching, backing-up databases e enabling point-in-time recovery*.
 *   Totalmente gerenciado pela AWS.
-*   Existem vários mecanismos otimizados para memória (**Amazon Aurora**, MySQL, Oracle, etc).
+*   Suporta vários motores de banco de dados (Database Engines): Amazon Aurora, MySQL, MariaDB, PostgreSQL, Oracle e SQL Server.
 *   Trabalha com **TABELAS** com LINHAS e COLUNAS (**dado estruturado**).
-*   Cloud-Base e desenhado para simplificar o Setup, Operação, e Escalar o Database relacional.
-*   Automatiza tarefas de administração como patching, backing up databases e enabling point-in-time recovery.
-*   Fácil de administrar pois não precisa de infraestrutura provisionada e nem instalar e manter database software’s, é rápido e suporta a maioria das aplicações para Banco de Dados.
+*   Cloud-Base e *desenhado para simplificar o Setup, Operação, e Escalar o Database relacional*.
+*   Fácil de administrar, pois não precisa de infraestrutura provisionada e nem instalar e manter database software’s, é rápido e suporta a maioria das aplicações para Banco de Dados.
 
 **Provisionamento**:
 
@@ -332,45 +343,103 @@ Dividido em:
 *   Altos níveis de disponibilidade e confiabilidade.
 *   Use **réplicas de leitura** para cargas de trabalho do BD com uso intenso de leitura, para desafogar o uso da Instância principal.
 *   Bancos de Dados Relacionais organizam dados estruturados em tabelas (linhas e colunas), seguindo um esquema pré-definido e usando **SQL**.
-
-**Banco de Dados Suportados pela Amazon**:
-
-*   **Amazon Aurora**: Banco de Dados proprietário da AWS (não é open-source). É compatível com MySQL e PostgreSQL, mas oferece **5x mais desempenho** que o MySQL padrão e custa **1/10 dos BD comerciais**. Possui tolerância a falhas automática (repara dados sozinho).
-
-Os itens abaixo são "Motores de Banco de Dados" (**Database Engines**) que você pode escolher para rodar dentro do serviço Amazon RDS:
-
-*   **PostgreSQL**: Focado em extensibilidade e conformidade rigorosa com padrões SQL. [Relacional, Open-Source e avançado]
-*   **MySQL**: O mais popular do mundo para aplicações web. Simples e confiável. [Relacional, open-source]
-*   **MariaDB**: É um "fork" (derivado) do MySQL, criado pelos fundadores originais do MySQL. [Relacional, open-source] 
-*   **Oracle DB**: Focado em grandes corporações, robusto e requer gerenciamento de licenças. [Relacional, comercial/empresarial] 
-*   **Microsoft SQL Server**: Ideal para ambientes corporativos que já usam Windows e .NET. [Relacional, comercial da Microsoft] 
-*   **IBM DB2**: Focado em cargas de trabalho empresariais críticas (adicionado recentemente ao RDS). [Relacional, comercial da IBM] 
+ 
 
 ### Amazon Dynamo DB
+[app-web,backend-de-app,jogos]
 
-Banco de Dados **Não Relacional Serveless** que pode guardar e recuperar qualquer quantidade de dado em qualquer level de tráfego requerido.
+Banco de Dados **Não Relacional Serveless** que pode *guardar e recuperar qualquer quantidade de dado em qualquer level de tráfego requerido*.
 
 *   Você pode escalar suas tabelas de BD aumentando ou diminuindo a capacidade sem qualquer diferença de tempo.
 *   Sem servidores para serem gerenciados, só seleciono a Tabela e começo a usar.
 *   Desempenho de **milissegundos de um dígito** em qualquer escala.
-*   Banco de dados de documento e **valores-chave (key-value) NoSQL** rápido e flexível. Documentos estilo Json.
+*   Banco de dados de documento e **valores-chave (key-value) NoSQL** rápido e flexível. Documentos estilo *Json*.
 *   **Serverless**, dimensiona automaticamente para se ajustar às mudanças de capacidade e manter um desempenho consistente.
 *   Pode usar o AWS Management Console para monitor os recursos utilizados e as métricas de perfomance.
 *   Serve para aliviar os encargos administrativos de operação e dimensionamento de um BD distribuído, sem se preocupar com provisionamento, setup, configuração, software etc.
 
 > **Obs**: Não importa o tamanho, ele nunca perde a eficiência.
-> **Obs**: Usado em aplicativos Web sem serviços / Back-end para aplicativos móveis/ jogos.
+> **Obs**: Usado em aplicativos Web sem serviços / Back-end para aplicativos móveis/ JOGOS.
 
 ### AWS Database Migration Service (AWS DMS)
+[migração-de-dados]
 
-*   Migra BD para a AWS com facilidade e segurança.
+*   *Migra Bancos de Dados* para a AWS com facilidade e segurança.
 *   Migra Dados para os Bancos de Dados mais usado.
-*   Mantenha a operação completa dos BD de origem durante a migração.
+*   *Mantêm a operação completa* dos BD de origem *durante a migração*.
 *   Migra Bancos de Dados Relacionais e Não Relacionais e outros tipos de Armazenamento de Dados.
 
 **Exp.**: My SQL ⮕ AWS DMS ⮕ Amazon Aurora 
 
-### Palavras chaves: (CAI NA PROVA)
+
+### Amazon Aurora
+[alta-perfomance-quando-MySQL-não-aguentar]
+
+*   Banco de dados **Relacional** proprietário da AWS (Enterprise-class).
+*   Totalmente compatível com **MySQL** e **PostgreSQL**.
+*   **Alta Performance:** É até **5x** mais rápido que o MySQL padrão e **3x** mais rápido que o PostgreSQL.
+*   **Alta Disponibilidade:** Replica automaticamente seus dados **6 vezes** através de 3 Zonas de Disponibilidade (AZs).
+*   Faz parte da família RDS, mas é focado em performance extrema e durabilidade.
+*   Possui versão **Serverless** (Aurora Serverless) que liga e desliga conforme o uso.
+*   Possui tolerância a falhas automática (repara dados sozinho).
+
+### Amazon Redshift
+[dados-extremamente-grandes]
+
+*   Serviço de **Data Warehousing** (Armazém de Dados) rápido e totalmente gerenciado.
+*   Desenhado para **Analytics** e **Business Intelligence (BI)**.
+*   Escala para *suportar Petabytes* de dados estruturados.
+*   Utiliza armazenamento **Colunar** (ideal para processar análises complexas em grandes volumes).
+*   Não é para transações rápidas do dia a dia (OLTP), e sim para consultas históricas e relatórios (OLAP).
+
+### Amazon ElastiCache
+[Para-guardar-cache/Netflix/CDN]
+
+*   Armazenamento de dados **Em Memória** (In-memory data store).
+*   Focado em velocidade extrema: oferece latência de **microssegundos**.
+*   Suporta os mecanismos **Redis** e **Memcached**.
+*   Utilizado como camada de **Cache** para aliviar a carga de leitura do banco de dados principal (RDS/DynamoDB).
+*   Ideal para armazenar sessões de usuários, rankings em tempo real e dados acessados frequentemente.
+
+### Motores de Bancos de Dados Suportados pelo *Amazon RDS*:
+
+Os itens abaixo são "Motores de Banco de Dados" (**Database Engines**) que você pode escolher para rodar dentro do serviço Amazon RDS. Lembre-se que o RDS suporta **6 motores**:
+
+## Amazon Aurora
+* **Tipo:** Banco de Dados Relacional Proprietário da AWS (Compatível com Open Source).
+* **Foco:** Performance extrema e Alta Disponibilidade. É projetado para ser **5x mais rápido** que o MySQL e **3x mais rápido** que o PostgreSQL.
+* **Resiliência:** Replica dados automaticamente 6 vezes através de 3 Zonas de Disponibilidade.
+* **Diferencial:** Possui a versão **Serverless** (escala automática sem gerenciar instâncias) e é totalmente gerenciado.
+
+## PostgreSQL
+* **Tipo:** Banco de Dados Relacional Open Source (Código Aberto).
+* **Foco:** Conhecido pela estabilidade, conformidade rigorosa com padrões SQL e capacidade de lidar com consultas complexas.
+* **Uso:** Muito utilizado por empresas que buscam uma alternativa robusta e gratuita ao Oracle Database. É o motor preferido para sistemas que exigem integridade de dados avançada.
+
+## MySQL
+* **Tipo:** Banco de Dados Relacional Open Source.
+* **Popularidade:** É o banco de dados open source mais popular do mundo, base da maioria das aplicações Web (parte da famosa pilha LAMP).
+* **Foco:** Simplicidade e velocidade. Ideal para sites, e-commerces e aplicações web em geral.
+* **Dono:** Atualmente mantido pela Oracle Corporation.
+
+## MariaDB
+* **Tipo:** Banco de Dados Relacional Open Source.
+* **Origem:** É um "fork" (bifurcação) do MySQL, criado pelos fundadores originais após a venda do MySQL para a Oracle.
+* **Filosofia:** Garante ser "para sempre Open Source".
+* **Compatibilidade:** É quase 100% compatível com o MySQL, funcionando como uma substituição direta (drop-in replacement).
+
+## Oracle Database
+* **Tipo:** Banco de Dados Relacional Comercial (Proprietário).
+* **Foco:** Projetado para grandes corporações e cargas de trabalho de missão crítica que exigem performance extrema e recursos complexos.
+* **Licenciamento:** Requer licenças pagas. No RDS, você pode usar o modelo "License Included" (paga tudo para a AWS) ou "BYOL" (Bring Your Own License - traz sua licença comprada da Oracle).
+
+## Microsoft SQL Server
+* **Tipo:** Banco de Dados Relacional Comercial (Proprietário).
+* **Ecossistema:** Altamente integrado com o ambiente Microsoft (Windows Server, .NET, C#).
+* **Foco:** Facilidade de gerenciamento com ferramentas visuais e robustez para ambientes corporativos.
+* **Licenciamento:** Assim como o Oracle, envolve custos de licença (License Included ou BYOL).
+
+> Palavras chaves: (CAI NA PROVA)
 
 *   **Amazon Redshift**: **Data Warehouse** (Armazém de dados), Big Data, SQL, **OLAP** (Consultas complexas em Petabytes). (Dados tão grandes que fica vermelho/RED)
 *   **Amazon DocumentDB**: Compatível com **MongoDB**, documentos JSON.
@@ -382,7 +451,6 @@ Banco de Dados **Não Relacional Serveless** que pode guardar e recuperar qualqu
 *   **S3 Glacier Flexible Retrieval**: Arquivamento de baixo custo. Recuperação em minutos ou até 12 horas.
 *   **S3 Glacier Deep Archive**: O armazenamento mais barato da AWS. Recuperação lenta (**12 a 48 horas**). (Lenta porque tá lá no fundo)
 
-# Módulo 6
 
 ## Segurança e Conformidade
 
@@ -450,18 +518,18 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 ### Amazon Macie
 
 *   Serviço de **Segurança de DADOS SENSÍVEIS** e privacidade. (PII, Cartões de Crédito)
-*   O Macie aplica técnicas de Machine Learning e correspondências de padrões para identificar dados sigilosos, incluindo PII (informações de identificação pessoal).
+*   O Macie aplica técnicas de **Machine Learning** e correspondências de padrões para identificar dados sigilosos, incluindo PII (informações de identificação pessoal).
 *   Pode gerar uma descoberta se dados sigilosos forem encontrados.
 *   Pode selecionar buckets especificos do S3 para o Macie pesquisar.
 
 ### AWS Key Management Service (AWS KMS)
 
-*   Faz justamente a **criptografia**, cria e gerencia a chave da criptografia.
+*   Faz justamente a **criptografia**, cria e gerencia a **chave da criptografia**.
 *   Ajuda o Cliente a executar Operações de Criptografias.
 
 > **Obs.:** (lembrar de Key) pelo uso de chaves de criptografia.
 
-### AWS CloudHSM
+### AWS CloudHSM (Hardware Security Module)
 
 *   Também cria a chave e ajuda a gerencia-la.
 *   Ajuda a atender requisitos de conformidade regulatória, contratual e corporativa para a segurança de dados usando dispositivos **Hardware Security Module** dedicados na Nuvem AWS.
@@ -472,11 +540,10 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 
 ### AWS Secrets Manager
 
-*   Gerencia, recupera e rotaciona **segredos** (credenciais de banco de dados, chaves de API).
+*   Gerencia, recupera e rotaciona **segredos** que você quer "guardar" (credenciais de banco de dados, chaves de API).
 *   A 'feature' matadora do Secrets Manager é a Rotação Automática de credenciais (integração nativa com RDS, etc).
 *   A rotação pode ocorrer no mínimo há 4 horas.
 
-# Módulo 7
 
 ## Monitoramento
 
@@ -515,11 +582,9 @@ Principal ferramenta de **monitoramento** e **observação**. Dispõe de Data e 
 
 > **Obs.:** Podem perguntar quais são as características no painel.
 
-# Módulo 8
 
 ## Preços e Suporte
 
-*   Nível gratuito da AWS fica disponível por **12 meses** para novos clientes.
 
 ### AWS Budgets
 
@@ -547,7 +612,46 @@ Principal ferramenta de **monitoramento** e **observação**. Dispõe de Data e 
 *   São um modelo de preços flexível que você pode usar para reduzir custos com base no uso da computação da AWS.
 *   É usado principalmente para otimização de custos de instâncias do EC2.
 
-# Módulo 9
+## Planos de Suporte da AWS
+
+A AWS divide o suporte em **4 níveis principais**:
+
+### 1. Basic (Básico)
+
+* **A quem se destina:** Usuários que estão apenas explorando ou aprendendo.
+* **Custo:** Gratuito (já incluído em todas as contas).
+* **Principal Diferença:** O suporte técnico é restrito. Você só consegue ajuda humana para questões de **faturamento** e **limites da conta**. Para problemas técnicos, você depende de documentação e fóruns.
+
+### 2. Developer (Desenvolvedor)
+
+* **A quem se destina:** Ambientes de teste e desenvolvimento inicial.
+* **Custo:** A partir de $29/mês.
+* **Principal Diferença:** Libera acesso ao suporte técnico via e-mail, mas apenas em **horário comercial**. O tempo de resposta para falhas gerais é de cerca de 12 a 24 horas.
+
+### 3. Business (Negócios)
+
+* **A quem se destina:** Cargas de trabalho de produção (empresas que já rodam sistemas na AWS).
+* **Custo:** A partir de $100/mês (ou porcentagem do uso).
+* **Principal Diferença:** O suporte passa a ser **24/7** (24 horas por dia, 7 dias por semana) via chat, telefone e e-mail. O tempo de resposta para sistema inoperante cai para **menos de 1 hora**.
+
+### 4. Enterprise (Empresarial)
+
+* **A quem se destina:** Grandes empresas com sistemas de missão crítica que não podem parar.
+* **Custo:** A partir de $15.000/mês (ou porcentagem do uso).
+* **Principal Diferença:** Acesso a um **Gerente Técnico de Contas (TAM)**, que é um consultor dedicado à sua empresa. O tempo de resposta para falhas críticas é de **15 minutos**.
+
+> Resumo das Diferenças Chave
+
+Para facilitar a visualização rápida:
+
+| Recurso | Basic | Developer | Business | Enterprise |
+| --- | --- | --- | --- | --- |
+| **Atendimento Humano** | Só p/ Fatura | Horário Comercial | **24/7** | **24/7** |
+| **Canais de Contato** | Web | E-mail | Chat, Fone, E-mail | Chat, Fone, E-mail |
+| **Tempo de Resposta** | -- | 12h-24h (geral) | < 1h (urgente) | **15 min (crítico)** |
+| **Consultoria Dedicada** | Não | Não | Não | **Sim (TAM)** |
+
+
 
 ## Migração e Inovação
 
@@ -580,7 +684,9 @@ Ele organiza o processo em **6 Perspectivas**:
 
 ### Família AWS SNOW
 
-*   Os dispositivos da **Família AWS Snow** permitem a captura e o **Transporte de Dados Offline** para a AWS a partir de **ambientes desconectados ou robustos**.
+*   Os dispositivos da **Família AWS Snow** permitem a captura e o **Transporte de Dados Offline** para a AWS a partir de **Ambientes DESCONECTADOS ou REMOTOS**.
+
+> **Obs**: É feito para ambientes Remotos, ele roda Offline, diferente do Outpost que precisa de conexão.
 
 #### AWS Snowball Edge
 
@@ -589,6 +695,8 @@ Ele organiza o processo em **6 Perspectivas**:
 *   Pode realizar cargas de trabalho de processamento local e computação de ponta.
 *   Pode transferir dados entre seu ambiente local e a nuvem AWS.
 *   Não melhora a latência de usuários globais.
+
+----
 
 ### Serviços Adicionais
 
@@ -628,23 +736,16 @@ Ele organiza o processo em **6 Perspectivas**:
 
 *   **Amazon Rekognition**: É usado para analisar fotos e vídeos.
 
-* **AWS Config**: Avalia, audita e avalia as configurações dos recursos AWS. **monitora a Configuração**  Ele pode ter regras para verificar conformidade (ex: região permitida). 
+*   **AWS Config**: Avalia, audita e avalia as configurações dos recursos AWS. **monitora a Configuração**  Ele pode ter regras para verificar conformidade (ex: região permitida). 
 
-## Geral:
 
-*   Com a computação em nuvem AWS, você pode trocar **custos fixos por custos variáveis** pagando somente pelos recursos que usar.
-*   É possível separar as cargas de trabalho de produção e não produção na AWS criando **várias contas** para fornecer o mais alto nível de isolamento de recursos e faturamento.
-*   **Qual plano do AWS Support inclui um Technical Account Manager (TAM) designado da AWS?**
-    *   **RE**: Enterprise Support inclui acesso a um TAM designado.
-*   **Responsabilidade da AWS**: A AWS é responsável pelo **descomissionamento seguro da mídia** como parte da proteção da infraestrutura global da AWS.
-
-# Modelos de Computação em Nuvem (Cloud Computing Models)
+## Modelos de Computação em Nuvem (Cloud Computing Models)
 
 Uma hierarquia que define o nível de controle e responsabilidade do usuário versus o provedor (AWS).
 
 ---
 
-## 1. IaaS (Infrastructure as a Service)
+### 1. IaaS (Infrastructure as a Service)
 **"Infraestrutura como Serviço"**
 
 * **Definição:** É o aluguel do hardware bruto (virtualizado). A AWS fornece o servidor, a rede e o armazenamento.
@@ -657,7 +758,7 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 
 ---
 
-## 2. PaaS (Platform as a Service)
+### 2. PaaS (Platform as a Service)
 **"Plataforma como Serviço"**
 
 * **Definição:** Ambiente focado em **desenvolvedores**. A AWS entrega a plataforma pronta (com S.O., atualizações e runtime instalados). Remove a necessidade de gerenciar a infraestrutura subjacente.
@@ -669,7 +770,7 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 
 ---
 
-## 3. FaaS (Function as a Service)
+### 3. FaaS (Function as a Service)
 **"Função como Serviço"** (Muitas vezes visto como uma evolução do PaaS)
 
 * **Definição:** Computação baseada em eventos. Você não vê servidores nem a plataforma. Você apenas carrega pequenos pedaços de código (funções) que rodam em resposta a gatilhos.
@@ -679,7 +780,7 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 
 ---
 
-## 4. SaaS (Software as a Service)
+### 4. SaaS (Software as a Service)
 **"Software como Serviço"**
 
 * **Definição:** Produto final completo. O usuário não gerencia nada, nem hardware, nem software, nem atualizações.
@@ -702,47 +803,6 @@ Uma hierarquia que define o nível de controle e responsabilidade do usuário ve
 | **FaaS** | Função | Apenas a Função (Código) | Tudo o resto | **Lambda** |
 | **SaaS** | Software | Nada (Apenas usa) | Tudo (App completa) | **Amazon Connect** |
 
-
-# Planos de Suporte da AWS
-
-A AWS divide o suporte em **4 níveis principais**:
-
-## 1. Basic (Básico)
-
-* **A quem se destina:** Usuários que estão apenas explorando ou aprendendo.
-* **Custo:** Gratuito (já incluído em todas as contas).
-* **Principal Diferença:** O suporte técnico é restrito. Você só consegue ajuda humana para questões de **faturamento** e **limites da conta**. Para problemas técnicos, você depende de documentação e fóruns.
-
-## 2. Developer (Desenvolvedor)
-
-* **A quem se destina:** Ambientes de teste e desenvolvimento inicial.
-* **Custo:** A partir de $29/mês.
-* **Principal Diferença:** Libera acesso ao suporte técnico via e-mail, mas apenas em **horário comercial**. O tempo de resposta para falhas gerais é de cerca de 12 a 24 horas.
-
-## 3. Business (Negócios)
-
-* **A quem se destina:** Cargas de trabalho de produção (empresas que já rodam sistemas na AWS).
-* **Custo:** A partir de $100/mês (ou porcentagem do uso).
-* **Principal Diferença:** O suporte passa a ser **24/7** (24 horas por dia, 7 dias por semana) via chat, telefone e e-mail. O tempo de resposta para sistema inoperante cai para **menos de 1 hora**.
-
-## 4. Enterprise (Empresarial)
-
-* **A quem se destina:** Grandes empresas com sistemas de missão crítica que não podem parar.
-* **Custo:** A partir de $15.000/mês (ou porcentagem do uso).
-* **Principal Diferença:** Acesso a um **Gerente Técnico de Contas (TAM)**, que é um consultor dedicado à sua empresa. O tempo de resposta para falhas críticas é de **15 minutos**.
-
----
-
-## Resumo das Diferenças Chave
-
-Para facilitar a visualização rápida:
-
-| Recurso | Basic | Developer | Business | Enterprise |
-| --- | --- | --- | --- | --- |
-| **Atendimento Humano** | Só p/ Fatura | Horário Comercial | **24/7** | **24/7** |
-| **Canais de Contato** | Web | E-mail | Chat, Fone, E-mail | Chat, Fone, E-mail |
-| **Tempo de Resposta** | -- | 12h-24h (geral) | < 1h (urgente) | **15 min (crítico)** |
-| **Consultoria Dedicada** | Não | Não | Não | **Sim (TAM)** |
 
 
 ---
