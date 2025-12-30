@@ -451,6 +451,139 @@ Os itens abaixo são "Motores de Banco de Dados" (**Database Engines**) que voc�
 *   **S3 Glacier Flexible Retrieval**: Arquivamento de baixo custo. Recuperação em minutos ou até 12 horas.
 *   **S3 Glacier Deep Archive**: O armazenamento mais barato da AWS. Recuperação lenta (**12 a 48 horas**). (Lenta porque tá lá no fundo)
 
+----
+
+# Módulo 4: REDES
+
+## Amazon Virtual Private Cloud (Amazon VPC)
+
+* Cria um ambiente de forma privada separado de outros clientes.
+* É um serviço que assim que você usa os recursos da AWS ele é lançado e separa os clientes dentro da rede da AWS, ou seja, cada um tem a sua.
+* Provê ferramentas que você pode usar para aumentar e monitor a segurança para sua VPC on demand.
+* Ambiente de Rede que executa os serviços definidos por você.
+* É onde se tem controle sobre o seu ambiente de rede virtual.
+* A AWS já cria uma VPC padrão (como se ela fosse a rede principal).
+
+## Sub-rede
+
+* É uma divisão em uma VPC, que você pode colocar grupos de recursos isolados.
+* Pode ser pública ou privada.
+* Permite iniciar recursos em uma rede virtual definida por você.
+* Vai acessar estação de trabalho pública (public sub net) e não acessa a (private sub net).
+
+### O que é esse "Sub"? - Vem de Subdivisão.
+
+* Imagine que a VPC é uma pizza inteira (a rede completa). A Sub-rede (Subnet) é uma fatia dessa pizza.
+* Na prática, você divide a faixa de IPs da sua VPC em blocos menores para organizar melhor.
+
+### Sub-redes
+
+Divisão dentro de uma VPC, que você pode colocar grupos de recursos isolados.
+
+**Sub-rede Pública:**
+* **Definição:** Possui uma rota direta para o Internet Gateway.
+* **Acesso:** Pode enviar e receber tráfego da internet diretamente.
+* **Uso:** Servidores Web, Load Balancers (coisas que o público precisa acessar).
+
+**Sub-rede Privada:**
+* **Definição:** NÃO possui rota para o Internet Gateway.
+* **Acesso:** Isolada da internet externa. Só fala com quem está dentro da VPC.
+* **Uso:** Bancos de dados, sistemas internos (coisas que devem ficar protegidas).
+
+---
+
+**Gateway de Internet** é essencialmente a "porta de entrada" que conecta sua rede local (casa/escritório) à vasta rede da internet.
+
+**Gateway** é um dispositivo ou software que funciona como um ponto de conexão entre duas redes ou sistemas diferentes.
+
+### AWS Transit Gateway
+
+* Conecta as VPC todas a nível mundial para criar um só sistema.
+
+### Gateway de internet
+
+* Um cliente envia uma solicitação pela internet e para a VPC.
+
+### Gateway privado virtual
+
+* Criar uma conexão VPC - entre a VPC e a Rede Corporativa Interna.
+
+---
+
+## AWS Direct Connect
+
+* É uma conexão dedicada entre minha empresa e a nuvem da AWS para evitar latência, etc.
+* Conexão de rede DEDICADA das suas instalações até a AWS.
+* Reduza os custos de rede e aumente a taxa de transferência da largura de banda.
+* Particione a conexão em várias interfaces virtuais.
+* Serve para estabelecer uma conexão dedicada entre o datacenter on-primises e a VPC.
+* Pode ser usado para bloquear o tráfego para uma instancia EC2.
+
+---
+
+## Tráfego de Rede em uma VPC: (CAI NA PROVA)
+
+Cliente ⮕ Pacote ⮕ Internet ⮕ Entra na nuvem da AWS ⮕ Entra na nuvem privada (VPC) ⮕ acessa o Gateway de Internet ⮕ Acessa o ACL ⮕ Entra na sub-rede-pública ⮕ passa por um Grupo de Segurança (da EC2) ⮕ Instância EC2.
+
+---
+
+## ACL (Lista de Controle de Acesso) / Acess Control List
+
+A ACL é um firewall virtual da sub-rede, divido em:
+
+1.  **ACL de rede-padrão** permite todo tráfego de entrada e saída.
+2.  **ACL de rede personalizada** negam todo tráfego de entrada e saída.
+    * **Na Padrão:** Existe uma Regra 100 que permite tudo.
+    * **Na Personalizada:** Não existe nenhuma regra, e a última regra (invisível, marcada com um asterisco *) é sempre NEGAR TUDO.
+3.  **ACL de rede stateless** (sem estado/sem memória) executam a filtragem de pacotes filtros stateless (cria uma regra de entrada e uma regra de saída).
+
+* Se você permite a entrada, você também precisa criar uma regra permitindo a saída (o retorno não é automático).
+* **Obs.:** É sem memória porque não se lembra de quem entrou.
+* **Obs.:** O stateful é com memória.
+
+## Grupo de Segurança
+
+* Atua como Firewall virtual para uma instância de EC2 para controlar tráfego de entrada e saída.
+* Por padrão nega todo tráfego de entrada e permite todo trafego de saída (lembrar de segurança na balada).
+* São pacotes filtros **stateful** (basta criar uma regra só).
+* Ele se lembra de quem entrou e libera a saída.
+
+* **um é para Lista** - verifica entrada e saída (ACL de rede).
+* **um é para EC2** - verifica por padrão só entrada (Grupo de Segurança) mas tem regras de saída também.
+
+---
+
+## Sistema de Nomes de Domínio (DNS)
+
+* Objetivo é resolver nomes.
+* Usa TCP/UDP porta 53.
+* Resolvedor DNS do cliente cria o IP para o cliente pegando os dados da Company DNS server.
+
+### Foward Lookup - Resolução Direta
+
+Nome ⮕ Endereço - Posso ter o IP dando o nome (caminho natural/direto) (decorar esse).
+
+### Reverse Lookup - Resolução Reversa
+
+Nome ⬅ Endereço - Posso ter o nome dando o IP (caminho não natural/reverso).
+
+## Amazon Route 53
+
+É o serviço de DNS da AWS, ajuda o cliente a chegar no servidor.
+
+* Altamente disponível e dimensionável.
+* É um servidor DNS Global.
+* Converte nomes de domínio em endereços IP numéricos.
+* Conecta os usuários à infraestrutura dentro e fora da AWS.
+* Roteia o tráfego para um destino íntegro no caso de failover.
+* Transfira registros DNS de nomes de domínio existentes.
+* Registre novos nomes de domínio.
+* Garanta um alto nível de disponibilidade com vários servidores de nomes.
+* Direciona usuários às aplicações de Internet.
+* Registra nome de DNS para domicílio de domínios AWS.
+* Converte o nome para um endereço IP (Foward Lookup).
+
+Amazon Route 53 is a highly available and scalable DNS service that can be used to direct traffic to your web application. It includes many advanced features like traffic flow, latency-based routing, weighted round-robin, Geo DNS, health checks, and monitoring. You can use these features to improve the performance of your web application and to avoid site outages. Route 53 is hosted at numerous AWS edge locations, creating a global surface area capable of absorbing large amounts of DDoS traffic.
 
 ## Segurança e Conformidade
 
@@ -543,6 +676,7 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 *   Gerencia, recupera e rotaciona **segredos** que você quer "guardar" (credenciais de banco de dados, chaves de API).
 *   A 'feature' matadora do Secrets Manager é a Rotação Automática de credenciais (integração nativa com RDS, etc).
 *   A rotação pode ocorrer no mínimo há 4 horas.
+
 
 
 ## Monitoramento
