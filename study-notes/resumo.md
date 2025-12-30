@@ -13,6 +13,12 @@ Usa capacidade computacional redimensionável e segura.
 Inicia instância de servidor em minutos.
 Pague somente pelo que usar.
 
+### Amazon Machine Image (AMI)
+* É o **modelo** (template) necessário para iniciar uma instância EC2.
+* Contém o Sistema Operacional (Linux/Windows), servidor de aplicação e aplicações.
+* Você pode usar AMIs prontas da AWS (ex: Amazon Linux 2), comprar no Marketplace ou criar sua própria imagem personalizada.
+* **Importante:** Sem uma AMI, você não consegue ligar uma EC2.
+
 ### Tipos de Instâncias 
 
 *   **De uso Geral**: Equilibra Recursos de Computação, Memória e Rede, adequada para uma ampla variedade de cargas de trabalho. ("**M**")
@@ -72,6 +78,21 @@ Adiciona ou remove automaticamente (por i.a) Instâncias do EC2 de acordo com as
 No exemplo da Black Friday, ele usa tanto o **Autoscaling** quanto o **Elastic Load Balance**:
 
 *   *O Autoscaling cria as Instâncias de acordo com o volume necessário, e quem faz o direcionamento das cargas dessas Instâncias é o Elastic Load Balance.*
+
+### Tipos de Elastic Load Balancer (ELB)
+
+1. **Application Load Balancer (ALB):**
+   * Trabalha na **Camada 7** (Aplicação/HTTP/HTTPS).
+   * Inteligente: Pode ver o conteúdo da URL (ex: manda /imagens para um servidor e /videos para outro).
+   * Ideal para microsserviços e containers.
+
+2. **Network Load Balancer (NLB):**
+   * Trabalha na **Camada 4** (Transporte/TCP/UDP).
+   * Focado em **Performance Extrema** (milhões de requisições por segundo) e **Latência Ultra Baixa**.
+   * Não vê conteúdo, só repassa pacotes IP rápido.
+
+3. **Gateway Load Balancer (GWLB):**
+   * Usado para implantar e escalar firewalls virtuais de terceiros (Appliances).
 
 ## Arquitetura da Aplicação
 
@@ -592,6 +613,7 @@ Amazon Route 53 is a highly available and scalable DNS service that can be used 
 *   **Controlabilidade** - Meu time pode acessar meus recursos na nuvem (defino permissões específicas).
 *   **Agilidade** - Preciso de agilidade para agir.
 
+
 ### Modelo de Responsabilidade Compartilhada:
 
 A responsabilidade é **compartilhada** entre a AWS e o Cliente.
@@ -614,6 +636,11 @@ Define que permissões **QUEM** vai ter, cria credenciais de acordo e dá permis
 *   Ative a **autentificação multifator (MFA)** para uma segurança ainda maior.
 
 > **Obs**: Usuário do IAM = **Entidade**.
+
+### Amazon Cognito
+* Gerencia a identidade de **usuários finais** (clientes) do seu aplicativo (Web ou Mobile).
+* Permite que os usuários façam login com usuário/senha ou via **Redes Sociais** (Google, Facebook, Apple, Amazon).
+* **Dica de Prova:** Se a pergunta falar em "Autenticação de usuários em App Mobile" ou "Login com Facebook", a resposta é Cognito.
 
 ### AWS Organizations
 
@@ -716,6 +743,16 @@ Principal ferramenta de **monitoramento** e **observação**. Dispõe de Data e 
 
 > **Obs.:** Podem perguntar quais são as características no painel.
 
+### Amazon EventBridge (Antigo CloudWatch Events)
+* É um barramento de eventos **Serverless**.
+* Conecta aplicações usando dados de seus próprios apps, apps SaaS e serviços AWS.
+* É usado para criar arquiteturas **baseadas em eventos** (ex: Quando um arquivo cair no S3, avise o Lambda).
+* Substituiu o CloudWatch Events na maioria das funções.
+
+### AWS Systems Manager (SSM)
+* Permite visualizar e controlar sua infraestrutura na AWS.
+* **Run Command:** Permite instalar patches ou rodar comandos em centenas de instâncias EC2 ao mesmo tempo, de forma segura, sem precisar abrir porta SSH/RDP.
+* **Parameter Store:** Guarda senhas e strings de configuração de forma hierárquica e segura (alternativa simples ao Secrets Manager).
 
 ## Preços e Suporte
 
