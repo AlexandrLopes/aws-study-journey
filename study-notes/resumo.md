@@ -2,7 +2,6 @@
 
 ## Modelo: Cliente - Servidor
 
-Um cliente faz uma solicitação e o servidor atende o pedido.
 **Computação em Nuvem** trabalha sob demanda; só paga o que for utilizado.
 Modelo perfeito para **startup’s**.
 
